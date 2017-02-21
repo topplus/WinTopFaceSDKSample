@@ -33,16 +33,15 @@ int initWithFocus(string model_path, float focus_length);
 
 
 
-    /**
-     * 检测人脸
-     * @param nv21 摄像头数据 yuv格式
-     * @param width  摄像头数据宽度
-     * @param height 摄像头数据高度
-     * @param bytePerPix 每个像素点的 byte
-     * @param rotation 摄像头数据旋转角度
-     * @ param faceInfo长度为151的数组，第0~135位表示68个人脸特征点二维像素坐标，原点是传入图像的左上角，特征点代表意义参考示意图；第136~138位表示人脸鼻尖处在相机坐标系下的位置数据，坐标系定义：x轴正方向向右,y轴正方向向下,z轴正方向向前；第139~141位表示人脸相对相机的姿态数据，单位是弧度，依次定义为：pitch俯仰角、roll翻滚角、yaw偏航角；第142位表示置信度.
-     */
-  bool dynamicDetect(unsigned char* grayscale_image,int rows,int cols, std::vector<float> & faceInfo);
+/**
+ * 检测人脸
+ * @param grayscale_image 图像数据，单通道灰度图格式
+ * @param width  图像宽度
+ * @param height 图像高度
+ * @ param faceInfo长度为151的数组，第0~135位表示68个人脸特征点二维像素坐标，原点是传入图像的左上角，特征点代表意义参考示意图；第136~138位表示人脸鼻尖处在相机坐标系下的位置数据，坐标系定义：x轴正方向向右,y轴正方向向下,z轴正方向向前；第139~141位表示人脸相对相机的姿态数据，单位是弧度，依次定义为：pitch俯仰角、roll翻滚角、yaw偏航角；第142位表示置信度.
+ */
+ bool dynamicDetect(unsigned char* grayscale_image,int rows,int cols, std::vector<float> & faceInfo);
+
 
 
 ```

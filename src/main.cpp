@@ -53,7 +53,7 @@ void Draw()
 
 	//detect
 	vector<float> face_result;
-	float confidence = faceSDK.dynamicDetect(grayImg.data,grayImg.rows,grayImg.cols, face_result);
+	float confidence = faceSDK.dynamicDetect(grayImg.data,grayImg.cols,grayImg.rows, face_result);
 
 	//draw points and axes
 	for(int i = 0; i < 136; i+=2)
@@ -79,8 +79,7 @@ void Draw()
 int main(int argc, char** argv)
 {
 	//请输入正确的clientID和clientSecret
-	//GlassFace.setLicense("id","secret");
-	
+	faceSDK.setLicense("id","secret");
 
 	//初始化
 	faceSDK.initWithFocus("sms",31.0);
