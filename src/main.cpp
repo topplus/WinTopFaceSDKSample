@@ -54,17 +54,18 @@ void Draw()
 	//detect
 	vector<float> face_result;
 	float confidence = faceSDK.dynamicDetect(grayImg.data,grayImg.cols,grayImg.rows, face_result);
-
-	//draw points and axes
-	for(int i = 0; i < 136; i+=2)
-	{
-		cv::Point2d p(face_result[i],face_result[i+1]);
-		cv::circle(processImg,p, 3, cv::Scalar(0, 255, 0),-1);
+	if (face_result.size() >= 150)
+	{	
+		//draw points and axes
+		for(int i = 0; i < 136; i+=2)
+		{
+			cv::Point2d p(face_result[i],face_result[i+1]);
+			cv::circle(processImg,p, 3, cv::Scalar(0, 255, 0),-1);
+		}
+		line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[144],face_result[145]),Scalar(0,255,0),2);// x
+		line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[146],face_result[147]),Scalar(255,0,0),2);// y
+		line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[148],face_result[149]),Scalar(0,0,255),2);// z
 	}
-	line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[144],face_result[145]),Scalar(0,255,0),2);// x
-	line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[146],face_result[147]),Scalar(255,0,0),2);// y
-	line(processImg,cv::Point2d(face_result[142],face_result[143]),cv::Point2d(face_result[148],face_result[149]),Scalar(0,0,255),2);// z
-
 	//draw by opengl
 	cv::cvtColor(processImg, processImg, CV_BGR2RGB);
 	renderManager->SetViewPort(0,0,processImg.cols, processImg.rows);
@@ -79,7 +80,14 @@ void Draw()
 int main(int argc, char** argv)
 {
 	//请输入正确的clientID和clientSecret
-	faceSDK.setLicense("id","secret");
+	std::cout << "please id and license\n";
+	std::cout << "id:";
+	string id;
+	std::cin >> id;
+	std::cout << "license:";
+	string license;
+	std::cin >> license;
+	faceSDK.setLicense(id, license);
 
 	//初始化
 	faceSDK.initWithFocus("sms",31.0);
