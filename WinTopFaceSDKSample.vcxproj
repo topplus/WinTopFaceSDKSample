@@ -68,8 +68,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>./include;$(C_OUT_PATH)\WinTopFaceSDK_lib\export;$(THIRD_PARTY)\opencv\2.4.11\windows\include;$(THIRD_PARTY)\openGL\4.3.0\include;$(IncludePath);WinTopFaceSDK_lib\export</IncludePath>
-    <LibraryPath>$(C_OUT_PATH)\WinTopFaceSDK_lib\\windows\x86\debug;$(THIRD_PARTY)\opencv\2.4.11\windows\x86\vc11\lib;$(THIRD_PARTY)\openGL\4.3.0\lib;$(LibraryPath);WinTopFaceSDK_lib\windows\x86\release</LibraryPath>
+    <IncludePath>./include;WinTopFaceSDK_lib\export;opencv\2.4.11\windows\include;openGL\4.3.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>opencv\2.4.11\windows\x86\vc11\lib;openGL\4.3.0\lib;WinTopFaceSDK_lib\windows\x86\debug;$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)d</TargetName>
     <OutDir>$(SolutionDir)bin</OutDir>
   </PropertyGroup>
@@ -80,8 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>./include;$(C_OUT_PATH)\WinTopFaceSDK_lib\export;$(THIRD_PARTY)\opencv\2.4.11\windows\include;$(THIRD_PARTY)\openGL\4.3.0\include;WinTopFaceSDK_lib\export;opencv\2.4.11\windows\include;openGL\4.3.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(C_OUT_PATH)\WinTopFaceSDK_lib\\windows\x86\release;$(THIRD_PARTY)\opencv\2.4.11\windows\x86\vc11\lib;$(THIRD_PARTY)\openGL\4.3.0\lib;WinTopFaceSDK_lib\windows\x86\release;opencv\2.4.11\windows\x86\vc11\lib;openGL\4.3.0\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>./include;WinTopFaceSDK_lib\export;opencv\2.4.11\windows\include;openGL\4.3.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>WinTopFaceSDK_lib\windows\x86\release;opencv\2.4.11\windows\x86\vc11\lib;openGL\4.3.0\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
