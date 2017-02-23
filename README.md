@@ -2,10 +2,16 @@
 <br>
 [官网](http://www.voome.cn)
 <br>
+##开发环境说明
+使用 vs2012进行 开发 .
+<br>
+##支持平台说明
+目前 sdk支持的 支持的 win7操作 系统 ;支持 x86平台 。
+<br>
 ##接入流程
 ###依赖库导入
 <br>
-所依赖的库文件为: WinTopFaceSDK.lib(release版本), WinTopFaceSDKd.lib(debug版本);需添加到项目中。
+依赖TopFaceSDK,路经:工程文件同级的WinTopFaceSDK_lib文件夹. 库文件为:WinTopFaceSDK.lib(release版本), WinTopFaceSDKd.lib(debug版本).
 <br>
 ###SDK初始化
 <br>
