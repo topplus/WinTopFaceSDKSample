@@ -10,7 +10,7 @@
 <br>
 ##接入流程
 ###依赖库导入
-依赖TopFaceSDK,路经:工程文件同级的WinTopFaceSDK_lib文件夹. 库文件为:WinTopFaceSDK.lib(release版本), WinTopFaceSDKd.lib(debug版本).
+依赖TopFaceSDK,路径:工程文件同级的WinTopFaceSDK_lib文件夹. 库文件为:WinTopFaceSDK.lib(release版本), WinTopFaceSDKd.lib(debug版本).
 <br>
 ###授权认证
 首先调用WinTopFaceSDK的setLicense(string clientID,string clientSecret)进行授权认证。
@@ -35,7 +35,7 @@ void setLicense(std::string clientID,std::string clientSecret);
 
 /**<br> 
 * 初始化TopFace<br> 
-* @param model_path 资源文件路经<br>
+* @param model_path 资源文件路径<br>
 * @param focus_length 等效焦距<br>
 * @return 返回码，-1表示初始化失败，0表示初始化成功<br>
 */<br> 
